@@ -7,14 +7,14 @@ public class WhacAMole {
     int boardWidth = 600;
     int boardHeight = 650; //50 for the text panel on top
 
-    JFrame frame = new JFrame("Mario: Whac A Mole");
+    JFrame frame = new JFrame("Lylio: Whac A Mole");
     JLabel textLabel = new JLabel();
     JPanel textPanel = new JPanel();
     JPanel boardPanel = new JPanel(); 
 	
     JButton[] board = new JButton[9];
     ImageIcon moleIcon;
-    ImageIcon plantIcon;
+    ImageIcon lyleIcon;
 
     JButton currMoleTile;
     JButton currPlantTile;
@@ -45,9 +45,9 @@ public class WhacAMole {
         // boardPanel.setBackground(Color.black);
         frame.add(boardPanel);
 
-        // plantIcon = new ImageIcon(getClass().getResource("./piranha.png"));
-        Image plantImg = new ImageIcon(getClass().getResource("./piranha.png")).getImage();
-        plantIcon = new ImageIcon(plantImg.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH));
+        // lyleIcon = new ImageIcon(getClass().getResource("./lyle.png"));
+        Image lyleImg = new ImageIcon(getClass().getResource("lyle.png")).getImage();
+        lyleIcon = new ImageIcon(lyleImg.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH));
 
         Image moleImg = new ImageIcon(getClass().getResource("./monty.png")).getImage();
         moleIcon = new ImageIcon(moleImg.getScaledInstance(150, 150, java.awt.Image.SCALE_SMOOTH));
@@ -57,7 +57,7 @@ public class WhacAMole {
             board[i] = tile;
             boardPanel.add(tile);
             tile.setFocusable(false);
-            // tile.setIcon(plantIcon);
+            // tile.setIcon(lyleIcon);
 
             tile.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -116,7 +116,7 @@ public class WhacAMole {
 
                 //set tile to mole
                 currPlantTile = tile;
-                currPlantTile.setIcon(plantIcon);
+                currPlantTile.setIcon(lyleIcon);
             }
         });
 
@@ -129,7 +129,7 @@ public class WhacAMole {
 
 /*
  * Homework
- * - Add Multiple Piranha plants and store them in an Array
+ * - Add Multiple Lyle pics and store them in an Array
  * - Add Button on the bottom to restart game
  * - Keep track of high score and display it
  */
