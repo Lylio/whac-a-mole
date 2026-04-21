@@ -13,4 +13,5 @@
 
 [How to setup Java with Visual Studio Code](https://youtu.be/BB0gZFpukJU)
 
-![whac-a-mole-demo](https://github.com/ImKennyYip/whac-a-mole-java/assets/78777681/07ed1058-0ed6-4521-9272-5db68925f218)
+
+![readme-pic.png](readme-pic.png)
