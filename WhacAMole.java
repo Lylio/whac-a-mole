@@ -10,7 +10,10 @@ public class WhacAMole {
     JFrame frame = new JFrame("Lylio: Whac A Mole");
     JLabel textLabel = new JLabel();
     JPanel textPanel = new JPanel();
-    JPanel boardPanel = new JPanel(); 
+    JPanel boardPanel = new JPanel();
+
+    JPanel bottomPanel = new JPanel();
+    JButton restartButton = new JButton("Restart Game");
 	
     JButton[] board = new JButton[9];
     ImageIcon moleIcon;
@@ -43,7 +46,7 @@ public class WhacAMole {
 
 	boardPanel.setLayout(new GridLayout(3, 3));
         // boardPanel.setBackground(Color.black);
-        frame.add(boardPanel);
+        frame.add(boardPanel, BorderLayout.CENTER);
 
         // lyleIcon = new ImageIcon(getClass().getResource("./lyle.png"));
         Image lyleImg = new ImageIcon(getClass().getResource("lyle.png")).getImage();
@@ -77,6 +80,21 @@ public class WhacAMole {
                 }
             });
 	}
+
+        restartButton.setFont(new Font("Arial", Font.BOLD, 24));
+        restartButton.setFocusable(false);
+        restartButton.setBackground(new Color(60, 160, 80));
+        restartButton.setForeground(Color.WHITE);
+        restartButton.setPreferredSize(new Dimension(220, 50));
+
+        bottomPanel.add(restartButton);
+        frame.add(bottomPanel, BorderLayout.SOUTH);
+
+        restartButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                restartGame();
+            }
+        });
 
         setMoleTimer = new Timer(1000, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -123,6 +141,29 @@ public class WhacAMole {
         setMoleTimer.start();
         setPlantTimer.start();
         frame.setVisible(true);
+    }
+
+    void restartGame() {
+        score = 0;
+        textLabel.setText("Score: " + score);
+
+        if (currMoleTile != null) {
+            currMoleTile.setIcon(null);
+            currMoleTile = null;
+        }
+
+        if (currPlantTile != null) {
+            currPlantTile.setIcon(null);
+            currPlantTile = null;
+        }
+
+        for (int i = 0; i < 9; i++) {
+            board[i].setIcon(null);
+            board[i].setEnabled(true);
+        }
+
+        setMoleTimer.restart();
+        setPlantTimer.restart();
     }
 }
 

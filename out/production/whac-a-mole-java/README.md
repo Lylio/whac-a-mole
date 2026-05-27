@@ -1,6 +1,10 @@
 # [Whac a Mole (Java)](https://youtu.be/rIQksHTwZzA)
 - Coding Tutorial: [https://youtu.be/ej8SatOj3V4](https://youtu.be/rIQksHTwZzA)
 
+**Please note**: this project is the work of Kenny Yip (https://www.youtube.com/@KennyYipCoding) who is an excellent
+programmer. I have merely adjusted parts of this code for my own understanding of the underlying concepts. Please go 
+and check out Kenny's channel and subscribe to his work: also found at https://www.kennyyipcoding.com/.
+
 |              |                                                                                                                                |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------|
 | Demo Link    | [whac-a-mole.lyle.app](https://whac-a-mole.lyle.app)                                                                           |
